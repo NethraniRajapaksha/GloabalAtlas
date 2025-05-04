@@ -37,6 +37,20 @@ const Header = ({ user }) => {
         >
           Global Atlas
         </Typography>
+        {user && (
+          <Button 
+            color="inherit" 
+            onClick={() => navigate("/favourites")}
+            sx={{
+              borderRadius: '4px',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)'
+              }
+            }}
+          >
+            Fav Flags
+          </Button>
+        )}
         
         {user && (
           <Button 
@@ -52,20 +66,7 @@ const Header = ({ user }) => {
             Logout
           </Button>
         )}
-         {user && (
-          <Button 
-            color="inherit" 
-            onClick={() => navigate("/favourites")}
-            sx={{
-              borderRadius: '4px',
-              '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.1)'
-              }
-            }}
-          >
-            Fav Flags
-          </Button>
-        )}
+        
       </Toolbar>
     </AppBar>
   );
